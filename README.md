@@ -7,7 +7,7 @@ In order for these scripts to work, you'll need
  - [Git](https://git-scm.com/download/win) (optional, cloning the repo)
 # Instructions
 To get these scripts to work, you'll need to
- 1. Install AutoHotkey
- 2. Clone this repo/download the latest release (to download the latest release, click the releases button at the top and click on the script you want to download under the assets section)
+ 1. Install [AutoHotkey](https://www.autohotkey.com/)
+ 2. Clone this repo/[download the latest release](https://github.com/Avijojo/ahk-scripts/releases) (to download the latest release, click the releases button at the top and click on the script you want to download under the assets section)
  3. Double click/start the script you want to use
  4. Check the code to see which keybinds to use (right click > edit) (optional)
