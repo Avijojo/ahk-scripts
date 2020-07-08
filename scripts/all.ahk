@@ -11,33 +11,40 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; ===
 ; Open Telegram with CTRL + WIN + A
 ^#A::
-WinActivate, Telegram
+  WinActivate, Telegram
 
 ; Open Discord with CTRL + WIN + X
 ^#X::
-WinActivate, Discord
+  WinActivate, Discord
 
 ; ===
-; Lock (things quickly)
+; Go to desktop and lock PC
 ; ===
 ; Go to desktop and lock PC with ALT + PAUSE
 !Pause::
   send, #d
   DllCall("user32.dll\LockWorkStation")
 
-; Lock Telegram, close Discord, and go to desktop with ALT + SHIFT + PAUSE
+; ===
+; "Lockdown" - Locks Telegram, closes Discord, goes to desktop, locks PC.
+; ===
 ; TODO: Make the names of applications more specific to prevent AHK from accidentally opening the wrong programme.
 !+Pause::
   WinActivate, Telegram
   send, ^l
   WinClose, Discord
+  sleep, 100
   send, #d
   DllCall("user32.dll\LockWorkStation")
 
-; Suspend AutoHotKey with WIN + ScrollLock
-#ScrollLock::Suspend
+; ===
+; Suspend script on WIN + P (toggle)
+; ===
+#p::
+  Suspend
 
 ; ===
-; Always on top with CTRL + SPACE
+; Window always on top with CTRL + SPACE
 ; ===
-^Space::Winset, AlwaysOnTop, , A
+^Space::
+  Winset, AlwaysOnTop, , A
