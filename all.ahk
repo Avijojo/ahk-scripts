@@ -1,13 +1,21 @@
 ; ===
-; This script can
-;   - go to the desktop and lock your PC (ALT + PAUSE).
-;   - go to the desktop, lock Telegram, close Discord, and lock your PC (ALT + SHIFT + PAUSE).
+; This script combines all of the other scrips together into one script for easier use.
 ; ===
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+; ===
+; Shortcut to apps
+; ===
+; Open Telegram with CTRL + WIN + A
+^#A::
+WinActivate, Telegram
+
+; ===
+; Lock (things quickly)
+; ===
 ; Go to desktop and lock PC with ALT + PAUSE
 !Pause::
   send, #d
