@@ -36,3 +36,8 @@ WinActivate, Discord
 
 ; Suspend AutoHotKey with WIN + ScrollLock
 #ScrollLock::Suspend
+
+; ===
+; Always on top with CTRL + SPACE
+; ===
+^Space::Winset, AlwaysOnTop, , A
