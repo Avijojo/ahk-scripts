@@ -29,3 +29,6 @@ WinActivate, Telegram
   WinClose, Discord
   send, #d
   DllCall("user32.dll\LockWorkStation")
+
+; Suspend AutoHotKey with WIN + ScrollLock 
+#ScrollLock::Suspend
