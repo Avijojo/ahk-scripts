@@ -17,7 +17,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ^#X::WinActivate, Discord
 
 ; Open osu! with F6
-F6::Run C:\Users\Avery\Documents\Games\osu!\osu!.exe ; Welcome to osu!
+F6::Run C:\Users\Avery\Documents\Games\osu!\osu!.exe
 
 ; Open Atom (text editor) with F7 (with window maxamised)
 F7::Run C:\Users\Avery\AppData\Local\atom\atom.exe, , Max
