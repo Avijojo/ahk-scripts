@@ -9,13 +9,21 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; ===
 ; Shortcut to apps
 ; ===
+
 ; Open Telegram with CTRL + WIN + A
-^#A::
-  WinActivate, Telegram
+^#A::WinActivate, Telegram
 
 ; Open Discord with CTRL + WIN + X
-^#X::
-  WinActivate, Discord
+^#X::WinActivate, Discord
+
+; Open osu! with F6
+F6::Run C:\Users\Avery\Documents\Games\osu!\osu!.exe ; Welcome to osu!
+
+; Open Atom (text editor) with F7 (with window maxamised)
+F7::Run C:\Users\Avery\AppData\Local\atom\atom.exe, , Max
+
+; Open Minecraft with F8
+F8::Run C:\Program Files (x86)\Minecraft Launcher\MinecraftLauncher.exe
 
 ; ===
 ; Go to desktop and lock PC
@@ -40,11 +48,9 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; ===
 ; Suspend script on WIN + P (toggle)
 ; ===
-#p::
-  Suspend
+#p::Suspend
 
 ; ===
 ; Window always on top with CTRL + SPACE
 ; ===
-^Space::
-  Winset, AlwaysOnTop, , A
+^Space::Winset, AlwaysOnTop, , A
