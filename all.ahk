@@ -13,6 +13,10 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ^#A::
 WinActivate, Telegram
 
+; Open Discord with CTRL + WIN + X
+^#X::
+WinActivate, Discord
+
 ; ===
 ; Lock (things quickly)
 ; ===
@@ -30,5 +34,5 @@ WinActivate, Telegram
   send, #d
   DllCall("user32.dll\LockWorkStation")
 
-; Suspend AutoHotKey with WIN + ScrollLock 
+; Suspend AutoHotKey with WIN + ScrollLock
 #ScrollLock::Suspend

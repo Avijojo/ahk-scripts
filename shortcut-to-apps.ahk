@@ -10,3 +10,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; Open Telegram with CTRL + WIN + A
 ^#A::
 WinActivate, Telegram
+
+; Open Discord with CTRL + WIN + X
+^#X::
+WinActivate, Discord
