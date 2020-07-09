@@ -28,6 +28,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 !Pause::
   send, #d
   DllCall("user32.dll\LockWorkStation")
+  Return
 
 ; Lock Telegram, close Discord, and go to desktop with ALT + SHIFT + PAUSE
 ; TODO: Make the names of applications more specific to prevent AHK from accidentally opening the wrong programme.
@@ -37,3 +38,4 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
   WinClose, Discord
   send, #d
   DllCall("user32.dll\LockWorkStation")
+  Return

@@ -28,18 +28,31 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ; Open Telegram with CTRL + WIN + A
 ^#A::WinActivate, Telegram
+Return
 
 ; Open Discord with CTRL + WIN + X
 ^#X::WinActivate, Discord
+Return
 
 ; Open osu! with F6
 F6::Run C:\Users\Avery\Documents\Games\osu!\osu!.exe
+Return
 
-; Open Atom (text editor) with F7 (with window maxamised)
-F7::Run C:\Users\Avery\AppData\Local\atom\atom.exe, , Max
+; Open Atom (text editor) when pressing F7, open Sublime Text when holding F7.
+; Thanks to "None" on AHK forums (https://autohotkey.com/board/topic/51156-different-actions-for-key-when-holding-it-down/)
+$F7::
+aDown:=A_TickCount
+Keywait F7
+Duration:=(A_TickCount-aDown)
+If (Duration<500)
+Run C:\Users\Avery\AppData\Local\atom\atom.exe, , Max
+Else
+Run C:\Program Files\Sublime Text 3\sublime_text.exe, , Max
+Return
 
 ; Open Minecraft with F8
 F8::Run C:\Program Files (x86)\Minecraft Launcher\MinecraftLauncher.exe
+Return
 
 ; ===
 ; Go to desktop and lock PC
@@ -48,25 +61,28 @@ F8::Run C:\Program Files (x86)\Minecraft Launcher\MinecraftLauncher.exe
 !Pause::
   send, #d
   DllCall("user32.dll\LockWorkStation")
+  Return
 
 ; ===
 ; "Lockdown" - Locks Telegram, closes Discord, goes to desktop, locks PC.
 ; ===
-; TODO: Make the names of applications more specific to prevent AHK from accidentally opening the wrong programme.
 !+Pause::
-  WinActivate, Telegram
+  WinActivate, Telegram.exe
   send, ^l
-  WinClose, Discord
+  WinClose, Discord.exe
   sleep, 100
   send, #d
   DllCall("user32.dll\LockWorkStation")
+  Return
 
 ; ===
 ; Suspend script on WIN + P (toggle)
 ; ===
 #p::Suspend
+Return
 
 ; ===
 ; Window always on top with CTRL + SPACE
 ; ===
 ^Space::Winset, AlwaysOnTop, , A
+Return
