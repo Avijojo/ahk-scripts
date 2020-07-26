@@ -90,11 +90,8 @@ Return
 ; ===
 ; This script bypasses websites that prevent you from pasting text
 ; ===
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-; #Warn  ; Enable warnings to assist with detecting common errors.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+^+V::
 ; Open dialog box to ask for text
 InputBox, pastetext, What text would you like to paste?, Type the text you want to paste below:
 MsgBox, , Ready to paste?, Press OK then select the text field you want to paste the text in.
