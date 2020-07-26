@@ -24,15 +24,15 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-; Go to desktop and lock PC with ALT + PAUSE
-!Pause::
+; Go to desktop and lock PC with CTRL + PAUSE
+^Pause::
   send, #d
   DllCall("user32.dll\LockWorkStation")
   Return
 
 ; Lock Telegram, close Discord, and go to desktop with ALT + SHIFT + PAUSE
 ; TODO: Make the names of applications more specific to prevent AHK from accidentally opening the wrong programme.
-!+Pause::
+^+Pause::
   WinActivate, Telegram
   send, ^l
   WinClose, Discord

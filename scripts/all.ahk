@@ -57,8 +57,8 @@ Return
 ; ===
 ; Go to desktop and lock PC
 ; ===
-; Go to desktop and lock PC with ALT + PAUSE
-!Pause::
+; Go to desktop and lock PC with CTRL + PAUSE
+^Pause::
   send, #d
   DllCall("user32.dll\LockWorkStation")
   Return
@@ -66,7 +66,7 @@ Return
 ; ===
 ; "Lockdown" - Locks Telegram, closes Discord, goes to desktop, locks PC.
 ; ===
-!+Pause::
+^+Pause::
   WinActivate, Telegram.exe
   send, ^l
   WinClose, Discord.exe
