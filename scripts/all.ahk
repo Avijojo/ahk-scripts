@@ -58,7 +58,7 @@ Return
 ; Go to desktop and lock PC
 ; ===
 ; Go to desktop and lock PC with CTRL + PAUSE
-^Pause::
+^CtrlBreak::
   send, #d
   DllCall("user32.dll\LockWorkStation")
   Return
@@ -66,7 +66,7 @@ Return
 ; ===
 ; "Lockdown" - Locks Telegram, closes Discord, goes to desktop, locks PC.
 ; ===
-^+Pause::
+^+CtrlBreak::
   WinActivate, Telegram.exe
   send, ^l
   WinClose, Discord.exe
@@ -98,3 +98,4 @@ MsgBox, , Ready to paste?, Press OK then select the text field you want to paste
 ; Actually paste the text
 sleep, 500
 send, %pastetext%
+Return
